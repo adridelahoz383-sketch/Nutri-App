@@ -1,0 +1,105 @@
+/* css/views.css — layouts por vista: onboarding, hoy, progreso, perfil */
+
+/* ---- Vista generica ---- */
+.view-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--sp-3); flex-wrap: wrap;
+  margin-bottom: var(--sp-4);
+}
+.view-title { font-size: var(--fs-xl); text-transform: capitalize; margin-bottom: var(--sp-2); }
+.view-head .view-title { margin-bottom: 0; }
+
+/* ---- Onboarding ---- */
+.onb-wrap {
+  min-height: 100dvh;
+  display: flex; align-items: flex-start; justify-content: center;
+  padding: var(--sp-4);
+}
+.onb-card {
+  width: 100%; max-width: 560px;
+  background: var(--c-surface); border-radius: var(--r-xl);
+  box-shadow: var(--sh-1);
+  padding: var(--sp-6);
+  margin-top: var(--sp-6);
+}
+@media (min-width: 600px) { .onb-wrap { align-items: center; } .onb-card { padding: var(--sp-8); margin-top: 0; } }
+.onb-step { font-size: var(--fs-xs); color: var(--c-text-muted); text-transform: uppercase; letter-spacing: .05em; }
+.onb-progress { height: 6px; background: var(--c-track); border-radius: var(--r-full); margin: var(--sp-2) 0 var(--sp-5); overflow: hidden; }
+.onb-progress-fill { height: 100%; background: var(--c-primary); border-radius: var(--r-full); transition: width .3s ease; }
+.onb-title { font-size: var(--fs-2xl); margin-bottom: var(--sp-4); }
+.onb-body { color: var(--c-text-muted); margin-bottom: var(--sp-4); }
+.onb-notice {
+  background: var(--c-surface-2); border-radius: var(--r-md);
+  padding: var(--sp-4); margin-bottom: var(--sp-4);
+  font-size: var(--fs-sm); color: var(--c-text-muted);
+}
+.onb-notice-title { font-size: var(--fs-md); color: var(--c-text); margin-bottom: var(--sp-2); }
+.onb-notice p + p { margin-top: var(--sp-2); }
+.onb-privacy { font-weight: 500; }
+.onb-nav { display: flex; justify-content: space-between; gap: var(--sp-3); margin-top: var(--sp-6); }
+.onb-warn { margin-top: var(--sp-3); }
+
+/* Resultado */
+.result-hero {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  padding: var(--sp-6);
+  background: var(--c-primary-soft); border-radius: var(--r-lg);
+  margin-bottom: var(--sp-5);
+}
+.result-num { font-size: var(--fs-hero); font-weight: 700; color: var(--c-primary-hover); }
+.result-unit { font-size: var(--fs-sm); color: var(--c-text-muted); }
+.result-list { display: grid; grid-template-columns: 1fr auto; gap: var(--sp-2) var(--sp-4); margin-bottom: var(--sp-4); }
+.result-list dt { color: var(--c-text-muted); font-size: var(--fs-sm); }
+.result-list dd { font-weight: 600; text-align: right; }
+
+/* ---- Hoy ---- */
+.today-grid { display: flex; flex-direction: column; gap: var(--sp-4); }
+.hero-card { display: flex; justify-content: center; }
+.macros-card { display: flex; flex-direction: column; }
+.meals-col { display: contents; }
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  .today-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+  .meals-col { display: flex; flex-direction: column; gap: var(--sp-3); grid-row: span 3; }
+  .meal-card .meal-head::after { display: none; } /* acordeon no necesario en 2 col */
+  .meal-card:not([open]) .meal-body { display: block; }
+}
+
+@media (min-width: 1024px) {
+  .today-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--sp-5);
+    align-items: start;
+  }
+  .hero-card { grid-column: span 5; }
+  .macros-card { grid-column: span 3; }
+  .weight-card { grid-column: span 4; }
+  .meals-col {
+    grid-column: 1 / 9;
+    display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4);
+  }
+  .meal-card .meal-head::after { display: none; }
+  .meal-card:not([open]) .meal-body { display: block; }
+}
+
+/* ---- Progreso ---- */
+@media (min-width: 1024px) {
+  body[data-view="progress"] .app-body #main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--sp-5);
+    align-items: start;
+  }
+  body[data-view="progress"] .view-head { grid-column: 1 / -1; }
+  body[data-view="progress"] .stat-tiles { grid-template-columns: 1fr; }
+}
+
+/* ---- Perfil ---- */
+.profile-section { margin-bottom: var(--sp-4); }
+.profile-form .field { max-width: 560px; }
+.profile-form .segmented { margin-bottom: var(--sp-2); }

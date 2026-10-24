@@ -1,0 +1,11 @@
+{
+  "name": "nutritrack",
+  "version": "0.1.0",
+  "description": "App local-first de seguimiento de calorias y peso (HTML/CSS/JS vanilla, ES Modules)",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test \"tests/**/*.test.js\"",
+    "serve": "npx --yes serve ."
+  }
+}

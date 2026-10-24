@@ -1,0 +1,56 @@
+/* css/tokens.css — design tokens. ESPECIFICACION §13 */
+
+:root {
+  /* Color */
+  --c-bg: #F5F7F8;
+  --c-surface: #FFFFFF;
+  --c-surface-2: #EEF2F4;
+  --c-border: #D8DEE3;
+  --c-text: #0F172A;
+  --c-text-muted: #475569;
+  --c-primary: #0F766E;
+  --c-primary-hover: #115E59;
+  --c-primary-soft: #CCFBF1;
+  --c-protein: #4F46E5;
+  --c-carbs: #D97706;
+  --c-fat: #DB2777;
+  --c-success: #15803D;
+  --c-warning: #B45309;
+  --c-warning-soft: #FEF3C7;
+  --c-danger: #B91C1C;
+  --c-danger-soft: #FEE2E2;
+  --c-info: #1D4ED8;
+  --c-info-soft: #DBEAFE;
+  --c-focus: #2563EB;
+  --c-track: #E2E8F0;
+
+  /* Tipografia */
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.25rem;
+  --fs-2xl: 1.5rem;
+  --fs-3xl: 2rem;
+  --fs-hero: 2.5rem;
+
+  /* Espaciado (base 4px) */
+  --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px; --sp-4: 16px; --sp-5: 20px;
+  --sp-6: 24px; --sp-8: 32px; --sp-10: 40px; --sp-12: 48px; --sp-16: 64px;
+
+  /* Radios */
+  --r-sm: 8px; --r-md: 12px; --r-lg: 16px; --r-xl: 24px; --r-full: 999px;
+
+  /* Sombras */
+  --sh-1: 0 1px 2px rgb(15 23 42 / .06), 0 1px 3px rgb(15 23 42 / .08);
+  --sh-2: 0 8px 24px rgb(15 23 42 / .14);
+
+  /* Breakpoints (documentados; usar en media queries de cada archivo) */
+  /* movil < 600px | tablet 600-1023px | desktop >= 1024px | wide >= 1440px */
+
+  --tabbar-h: 60px;
+  --rail-w: 76px;
+  --side-w: 232px;
+  --content-max: 1200px;
+}
